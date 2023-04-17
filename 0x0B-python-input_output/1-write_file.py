@@ -1,9 +1,17 @@
 #!/usr/bin/python3
-"""
-Contains the function "wrtie_file"
-"""
+"""Defines write_file function."""
+
 
 def write_file(filename="", text=""):
-    """returns the number of chars written to "filename" from "text" """
-    with open(filename, 'w', encoding='utf=8') as f:
-        return f.write(text)
+    """Write to a file with UTF-8 encoding.
+
+    Args:
+        filename (str, optional): Name of file to create or overwrite
+        text (str, optional): Name of text to insert in to @filename
+
+    Returns:
+        Character count inside @filename
+    """
+    with open(filename, encoding="UTF-8", mode="w") as file:
+        char_count = file.write(text)
+    return char_count
